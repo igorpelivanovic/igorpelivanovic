@@ -1,0 +1,235 @@
+@use 'sass:map';
+@import './../../styles/_variables';
+
+section#hero{
+    height: 100vh;
+    margin-top: -90px;
+    .container{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        .content{
+            flex: 0 0 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 10px;
+            h1{
+                font-size: 1.6rem;
+                margin-block: 8px;
+                transition-timing-function: ease-in-out;
+                span{
+                    display: block;
+                    margin-block: 5px;
+                    line-height: 1.3;
+                    &.name{
+                        font-size: 2.6rem;
+                        text-transform: capitalize;
+                        background: linear-gradient(129deg, #5155e1 0%, #363cdd 50%, #5155e1 100%);
+                        background-size: 200% 100%;
+                        background-position: 0 0;
+                        background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        animation: nameAnime 5s infinite linear;
+                    }
+                    &.typewriter{
+                        padding-right: 5px;
+                        position: relative;
+                        width: fit-content;
+                        border-right-width: 3px;
+                        border-right-style: solid;
+                        animation: cursorOpacity .4s step-end infinite alternate ;
+                        &::before{
+                            content: "a ";
+                        }
+                    }
+                }
+            }
+            .buttonsContainer{
+                display: flex;
+                gap: 30px;
+                button{
+                    display: block;
+                    text-transform: uppercase;
+                    border-radius: 8px;
+                    padding: 10px 28px;
+                    font-weight: 700;
+                    font-size: .9rem;
+                    cursor: pointer;
+                    transition-duration: .3s;
+                    transition-property: background-color color;
+                    transition-timing-function: ease-in-out;
+                    &.primary-btn{
+                        border: none;
+                        transition-timing-function: ease-in-out;
+                        transition-delay: .2s;
+                    }
+                    &.secondery-btn{
+                        background-color: transparent;
+                        border-width: 2px;
+                        border-style: solid;
+                        position: relative;
+                        overflow: hidden;
+                        transition-timing-function: ease-in-out;
+                        transition-delay: .3s;
+                        &::before{
+                            content: "";
+                            position: absolute;
+                            top: 100%;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            z-index: -1;
+                            transition: transform .3s;
+                        }
+                        &:hover::before{
+                            transform: translateY(-100%);
+                        }
+                    }
+                }
+            }
+        }
+        .logoContainer{
+            display: none;
+            flex: 0 0 480px;
+            justify-content: center;
+            align-items: center;
+            height: 480px;
+            position: relative;
+            &::before{
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+                animation: logoContainerAnime 15s linear infinite;
+                filter: brightness(0.35);
+            }
+            .imgContainer{
+                flex: 0 0 45%;
+                position: relative;
+                display: flex;
+                justify-content: center;
+                svg{
+                    .cls-1,.cls-2{
+                        stroke-miterlimit:10;
+                        stroke-width:6px;
+                        transition: .2s;
+                        transition-property: fill, stroke;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes nameAnime{
+    100%{
+        background-position: 200% 0;
+    }
+}
+@keyframes logoContainerAnime{
+    0%, 100%{
+        border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    }
+    20%{
+        border-radius: 58% 42% 45% 55% / 62% 66% 34% 38%;
+    }
+    40%{
+        border-radius: 74% 26% 68% 32% / 41% 77% 23% 59%;
+
+    }
+    60%{
+        border-radius: 33% 67% 81% 19% / 17% 46% 54% 83%;
+
+    }
+    80%{
+        border-radius: 84% 16% 74% 26% / 46% 55% 45% 54%;
+    }
+}
+@keyframes cursorOpacity{
+    50%{
+        border-color: transparent;
+    }
+}
+
+@media (min-width: map.get($breakPoints, 'large')){
+    section#hero{
+        .container{
+            .content{
+                flex: 0 0 60%;
+                h1{
+                    font-size: 1.7rem;
+                    span{
+                        &.name{
+                            font-size: 2.8rem;
+                        }
+                    }
+                }
+                .buttonsContainer{
+                    button{
+                        font-size: .95rem;
+                    }
+                }
+            }
+            .logoContainer{
+                display: flex;
+                flex: 1;
+                height: 400px;
+            }
+        }
+    }
+}
+
+@media (min-width: map.get($breakPoints, 'extraLarge')){
+    section#hero{
+        .container{
+            .content{
+                flex: 0 0 60%;
+                h1{
+                    font-size: 1.75rem;
+                    span{
+                        &.name{
+                            font-size: 2.85rem;
+                        }
+                    }
+                }
+                .buttonsContainer{
+                    button{
+                        font-size: .975rem;
+                    }
+                }
+            }
+            .logoContainer{
+                height: 440px;
+            }
+        }
+    }
+}
+@media (min-width: map.get($breakPoints, 'extraExtraLarge')){
+    section#hero{
+        .container{
+            .content{
+                flex: 0 0 60%;
+                h1{
+                    font-size: 1.8rem;
+                    span{
+                        &.name{
+                            font-size: 3rem;
+                        }
+                    }
+                }
+                .buttonsContainer{
+                    button{
+                        font-size: 1rem;
+                    }
+                }
+            }
+            .logoContainer{
+                height: 480px;
+            }
+        }
+    }
+}

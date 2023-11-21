@@ -1,0 +1,16 @@
+<div class="infoMessageContainer">
+    <ng-container *ngFor="let message of messages">
+        <div class="infoMessage text-color-text bg-color-primary" @fadeInOutFromRight>
+            <div class="iconContainer">
+                <span class="icon">
+                    <fa-icon [icon]="message.type == 'success' ? icon.faCircleCheck : icon.faCircleExclamation"></fa-icon>
+                </span>
+            </div>
+            <div class="messageContainer">
+                <p>{{message.messsage}}</p>
+            </div>
+            <div class="timeLine bg-color-text" appToFullWidth [duration]="message.duration">
+            </div>
+        </div>
+    </ng-container>
+</div>

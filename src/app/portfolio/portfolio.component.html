@@ -1,0 +1,27 @@
+<section id="portfolio" appSectionIntoView horizontalScroll>
+    <div class="container">
+        <div class="stickyContainer">
+            <div class="titleSection">
+                <h2 class="text-color-text">projects</h2>
+            </div>
+            <div class="stickyContent downTranslate opacity" appIntoSectionObserver [addClass]="'intoView'">
+                <div class="overflowContainer text-color-text" #elementsContainer>
+                    <div class="siteContent" *ngFor="let project of projects">
+                        <div class="siteContainer">
+                            <div class="imgsContainer">
+                                <img [src]="'assets/imgs/'+project.image" [alt]="project.image+'_img'">
+                            </div>
+                            <div class="contentContainer">
+                                <h3 class="text-color-primary">{{project.title}}</h3>
+                                <p>{{project.body}}</p>
+                                <a [href]="project.url" target="_blank" class="bg-color-primary text-color-text hover-bg-color-accent">demo <span>
+                                    <fa-icon [icon]="icon.faArrowUpRightFromSquare"></fa-icon>
+                                </span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

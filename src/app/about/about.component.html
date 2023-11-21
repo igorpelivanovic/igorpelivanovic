@@ -1,0 +1,48 @@
+<section id="about" appSectionIntoView>
+    <div class="container">
+        <div class="borderContainer before-bg-color-background">
+            <div class="titleSection bg-color-background">
+                <h2 class="text-color-text">about <span class="text-color-primary">me</span></h2>
+            </div>
+            <div class="sectionImgContainer zoomOut opacity" appIntoSectionObserver [addClass]="'intoView'">
+                <div class="imgContainer">
+                    <img src="assets/imgs/about.png" alt="about_jpg">
+                </div>
+                <div class="cvBtnContainer">
+                    <button type="button" class="text-color-text bg-color-primary hover-bg-color-accent" (click)="openFile()">Download my CV</button>
+                </div>
+            </div>
+        </div>
+        <div class="contentContainer text-color-text">
+            <div class="contentPartContainer rightTranslate opacity" appIntoSectionObserver [addClass]="'intoView'">
+                <div class="textContainer">
+                    <p>Hey, my name is Igor Pelivanović. I'm junior front-end developer. I'm passionate about cars and technology, and always curious to learn more.</p>
+                    <p>I'm open to job opportunities where i can contribute, learn and grow. If you have a good opportunity that matches my skills and experience then don't hesitate to contact me.</p>
+                </div>
+            </div>
+            <div class="contentPartContainer educationContent rightTranslate opacity" appIntoSectionObserver [addClass]="'intoView'">
+                <div class="educationContainer">
+                    <div class="educationTitle">
+                        <h3><fa-icon [icon]="icon.faGraduationCap"></fa-icon> education</h3>
+                    </div>
+                    <div class="educationBody">
+                        <div class="educationTimeline">
+                            <div class="timeLinePartContainer" *ngFor="let opt of edu">
+                                <div class="timeLinePartContent before-bg-color-accent before-text-color-accent after-bg-color-accent">
+                                    <h4>{{opt.title}}</h4>
+                                    <span class="schoolName">{{opt.subTitle}}</span>
+                                    <span class="yr">
+                                        <fa-icon [icon]="icon.faCalendarDays"></fa-icon> {{opt.time.start}} - {{opt.time.end}}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+

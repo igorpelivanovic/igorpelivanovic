@@ -1,0 +1,63 @@
+<section id="contact" appSectionIntoView> 
+    <div class="container">
+        <div class="titleSection">
+            <h2 class="text-color-text">contact <span class="text-color-primary">me</span></h2>
+        </div>
+        <div class="contactsOptionsContainer">
+            <div class="optionsContainer downTranslate opacity" appIntoSectionObserver [addClass]="'intoView'">
+                <div class="titleContainer text-color-text">
+                    <h3>talk to me</h3>
+                </div>
+                <div class="optionsCartContainer">
+                    <div class="zoomOut optionContainer border-color-primary bg-color-secondery opacity" appIntoSectionObserver [addClass]="'intoView'">
+                        <span class="icon text-color-primary"><fa-icon [icon]="icon.faEnvelope"></fa-icon></span>
+                        <p><span class="titleOption text-color-primary">email</span><span class="text-color-text">igor.pelivanovic@gmail.com</span></p>
+                        <a href="mailto:igor.pelivanovic@gmail.com" class="text-color-accent">write me</a>
+                    </div>
+                    <div class="zoomOut optionContainer border-color-primary bg-color-secondery opacity" appIntoSectionObserver [addClass]="'intoView'">
+                        <span class="icon text-color-primary"><fa-icon [icon]="icon.faLinkedin"></fa-icon></span>
+                        <p><span class="titleOption text-color-primary">linkedIn</span><span class="text-color-text">igor pelivanovic</span></p>
+                        <a href="https://rs.linkedin.com/in/igor-pelivanovic-b11653264" target="_blank" class="text-color-accent">write me</a>
+                    </div>
+                </div>
+            </div>
+            <div class="messageContainerForm downTranslate opacity" appIntoSectionObserver [addClass]="'intoView'">
+                <div class="titleContainer">
+                    <h3 class="text-color-text">
+                        write your message
+                    </h3>
+                </div>
+                <div class="formContainer zoomOut opacity" appIntoSectionObserver [addClass]="'intoView'">
+                    <form [formGroup]="form" (ngSubmit)="submitContactForm()">
+                        <div class="inputContainer">
+                            <label for="from_name">
+                                <span class="label text-color-text">name</span>
+                                <input type="text" id="from_name" name="from_name" class="text-color-text" spellcheck="false" placeholder="" formControlName="from_name">
+                                <app-error-input-message [formSubmit]="isSubmitForm" [errors]="getFormControl('from_name').errors"></app-error-input-message>
+                            </label>
+                        </div>
+                        <div class="inputContainer">
+                            <label for="email_id">
+                                <span class="label text-color-text">e-mail</span>
+                                <input type="email" id="email_id" name="email_id" class="text-color-text" spellcheck="false" placeholder="" email="true" formControlName="email_id"> 
+                                <app-error-input-message [formSubmit]="isSubmitForm" [errors]="getFormControl('email_id').errors"></app-error-input-message>
+                            </label>
+                        </div>
+                        <div class="inputContainer">
+                            <label for="message">
+                                <span class="label text-color-text">message</span>
+                                <textarea name="message" id="message" class="text-color-text" spellcheck="false" placeholder="" formControlName="message"></textarea>
+                                <app-error-input-message [formSubmit]="isSubmitForm" [errors]="getFormControl('message').errors"></app-error-input-message>
+                            </label>
+                        </div>
+                        <div class="submitContainer">
+                            <button type="submit" [disabled]="sendingProgress" class="text-color-text bg-color-accent before-bg-color-primary">
+                                send message <span class="icon" [ngClass]="{sendingProgress: sendingProgress}"><fa-icon [icon]="sendingProgress ? icon.faSpinner : icon.faPaperPlane"></fa-icon></span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

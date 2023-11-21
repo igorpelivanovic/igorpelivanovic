@@ -1,0 +1,233 @@
+@use 'sass:map';
+@import './../../styles/_variables';
+
+section#contact{
+    .container{
+
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 70px;
+        padding-bottom: 100px;
+        .titleSection{
+            text-align: center;
+            text-transform: capitalize;
+        }
+        .contactsOptionsContainer{
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 80px;
+            >*{
+                flex: 0 0 50%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 50px;
+                .titleContainer{
+                    h3{
+                        font-size: 1.4rem;
+                        &::first-letter{
+                            text-transform: capitalize;
+                        }
+                    }
+                }
+                .formContainer, .optionsCartContainer{
+                    flex: 1;
+                }
+            }
+            .optionsContainer{
+                .optionsCartContainer{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 35px;
+                    width: 100%;
+                    .optionContainer{
+                        padding-block: 25px;
+                        text-align: center;
+                        width: 85%;
+                        border-radius: 8px;
+                        border-width: 1px;
+                        border-style: solid;
+                        span{
+                            display: block;
+                            &.icon{
+                                font-size: 2rem;
+                                margin-bottom: 10px;
+                            }
+                            &.titleOption{
+                                text-transform: capitalize;
+                                font-weight: 500;
+                                font-size: 1.05rem;
+                                margin-bottom: 10px;
+                            }
+                        }
+                        a{
+                           display: inline-block;
+                           margin-top: 20px; 
+                           text-decoration: none;
+                           font-weight: 600;
+                           &::first-letter{
+                            text-transform: capitalize;
+                           }
+                           &:hover{
+                            text-decoration: underline;
+                           }
+                        }
+                    }
+                }
+            }
+            .messageContainerForm{
+                .formContainer{
+                    width: 85%;
+                    form{
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: flex-start;
+                        gap: 40px;
+                        height: 100%;
+                        width: 100%;
+                        .inputContainer{
+                            label{
+                                border-width: 1px;
+                                border-style: solid;   
+                                border-radius: 15px;                               
+                                display: block;
+                                position: relative;
+                                padding: 10px 15px;
+                                span.label{
+                                    position: absolute;
+                                    cursor: text;
+                                    left: 15px;
+                                    top: 50%;
+                                    transform: translateY(-50%);
+                                    font-size: 1rem;
+                                    transition: .3s;
+                                    transition-property: transform, top, font-size, padding-inline;
+                                    &:has(+textarea){
+                                        top: 10px;
+                                        transform: translateY(0);
+                                    }
+                                    &:has(+input:focus), &:has(+textarea:focus), &:has(+input:not(:placeholder-shown)), &:has(+textarea:not(:placeholder-shown)){
+                                        padding-inline: 4px;
+                                        top: 0;
+                                        font-size: .9rem;
+                                        transform: translateY(-50%);
+                                    }
+                                    &::first-letter{
+                                        text-transform: capitalize;
+                                    }
+                                }
+                                input{
+                                    display: block;
+                                    background-color: transparent;
+                                    width: 100%; 
+                                    font-size: 1.05rem;             
+                                    border: none;                   
+                                }
+                                textarea{
+                                    font-size: 1.05rem;                                
+                                    display: block;
+                                    background-color: transparent;
+                                    resize: none;
+                                    border: none;                   
+                                    width: 100%;         
+                                    height: 150px;                        
+                                }
+                            }
+                        }
+                        .submitContainer{
+                            margin-top: auto;
+                            button{
+                                margin-inline: auto;
+                                display: block;
+                                border: none;
+                                cursor: pointer;
+                                text-transform: capitalize;
+                                font-weight: 500;
+                                padding: 10px 30px;
+                                font-size: .9rem;
+                                border-radius: 30px;
+                                position: relative;
+                                overflow: hidden;
+                                span.icon{
+                                    margin-left: 4px;
+                                    position: relative;
+                                    display: inline-block;
+                                    &.sendingProgress{                                    
+                                        animation: rotate 2s infinite linear;
+                                    }
+                                }
+                                &:disabled{
+                                    cursor: auto;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes rotate{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+@media (min-width: map.get($breakPoints, 'medium')){
+    section#contact{
+        .container{
+            .contactsOptionsContainer{
+                align-items: stretch;
+                >*{
+                    width: 80%;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: map.get($breakPoints, 'large')){
+    section#contact{
+        .container{
+            padding-bottom: 160px;
+            .contactsOptionsContainer{
+                flex-direction: row;
+                gap: 00px;
+                .optionsContainer{
+                    .optionsCartContainer{
+                        gap: 20px;
+                        .optionContainer{
+                            width: 350px;
+                        }
+                    }
+                }
+                .messageContainerForm{
+                    .formContainer{
+                        width: 400px;
+                        form{
+                            width: 100%;
+                            justify-content: center;
+                            .inputContainer{
+                                label{
+                                }
+                            }
+                            .submitContainer{
+                                button{
+                                    margin: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

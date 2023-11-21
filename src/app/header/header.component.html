@@ -1,0 +1,40 @@
+<header [ngClass]="[scrolled ? 'bg-color-backgroundDark' : 'bg-color-background']">
+    <div class="container">
+        <div #logoContainer class="logoContainer">
+            <a href="/">
+                <img src="assets/imgs/logo.svg" alt="logo_svg">
+            </a>
+        </div>
+        <div class="navigationContainer" [ngClass]="load ? 'intoView': 'upTranslate opacity'" [ngClass]="hamburgerMenuOpen ? 'hamburgerActive' : ''">
+            <nav>
+                <ul>
+                    <li>
+                        <button type="button" data-fragment="hero" #navButton (click)="goToSection('hero')" [ngClass]="[currentSection=='hero'? 'text-color-accent' : 'text-color-text']">home</button>
+                    </li>
+                    <li>
+                        <button type="button" data-fragment="about" #navButton (click)="goToSection('about')" [ngClass]="[currentSection=='about'? 'text-color-accent' : 'text-color-text']">about</button>
+                    </li>
+                    <li>
+                        <button type="button" data-fragment="portfolio" #navButton (click)="goToSection('portfolio')" [ngClass]="[currentSection=='portfolio'? 'text-color-accent' : 'text-color-text']">projects</button>
+                    </li>
+                    <li>
+                        <button type="button" data-fragment="contact" #navButton (click)="goToSection('contact')"  [ngClass]="[currentSection=='contact'? 'text-color-accent' : 'text-color-text']">contact</button>
+                    </li>
+                </ul>
+                <span #navIndicator class="indicator bg-color-accent"></span>
+            </nav>
+            <div class="hamburgerMenuContainer">
+                <button type="button" class="hamburgerMenuBtn bg-color-backgroundDark" (click)="toggleHamburgerMenu()">
+                    <div class="linesContainer">
+                        <span class="line bg-color-text"></span>
+                        <span class="line bg-color-text"></span>
+                        <span class="line bg-color-text"></span>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
+<ng-container *ngIf="!load" >
+    <app-load-screen #loadScreen [@AnimateLoadingScreen]="logoContainerStyle"></app-load-screen>
+</ng-container>

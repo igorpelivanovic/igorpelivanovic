@@ -1,0 +1,163 @@
+@use 'sass:map';
+@import './../../styles/_variables';
+
+footer{
+    .container{
+        .topFooterContainer{
+            display: flex;
+            flex-direction: column;
+            padding-block: 50px;
+            gap: 70px;
+            .imgContainer{
+                order: 3;
+                img{
+                    margin: auto;
+                    width: 100px;
+                }
+            }
+            .navContainer{
+                order: 1;
+                flex: 1;
+                nav{
+                    ul{
+                        display: flex;
+                        justify-content: center;
+                        flex-direction: column;
+                        align-items: center;
+                        gap: 20px;
+                        li{
+                            button{
+                                text-decoration: none;
+                                text-transform: capitalize;
+                                font-size: 1.3rem;
+                                padding-inline: 10px;
+                                font-weight: 500;
+                                background-color: transparent;
+                                cursor: pointer;
+                                border: none;
+                                transition: .3s ;
+                            }
+                        }
+                    }
+                }
+            }
+            .socialMediaContainer{
+                order: 2;
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+                .iconContainer{
+                    display: inline-block;
+                    margin-inline: 10px;
+                    transition: .3s;
+                    a{
+                        display: flex;
+                        width: 60px;
+                        height: 60px;
+                        justify-content: center;
+                        align-items: center;
+                        font-size: 1.3rem;
+                        fa-icon{
+                            transition: .2s;
+                        }
+                        &:hover{
+                            fa-icon{
+                                scale: 1.2;
+                            }
+                        }
+                    }
+                    border-radius: 50%;
+                    overflow: hidden;
+                }
+            }
+        }
+        .bottomFooterContainer{
+            padding-block: 20px;
+            text-align: center;
+            p{
+                text-transform: capitalize;
+                a{
+                    text-decoration: none;
+                    position: relative;
+                    font-size: 1.25rem;
+                    font-weight: 500;
+                    &::before, &::after{
+                        content: "";
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        width: 18px;
+                        height: 5px;
+                        border-radius: 2px;
+                    }
+                    &::before{
+                        right: 100%;
+                        margin-right: 5px;
+                    }
+                    &::after{
+                        left: 100%;
+                        margin-left: 5px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: map.get($breakPoints, 'small')){
+    footer{
+        .container{
+            .topFooterContainer{
+                flex-direction: row-reverse;
+                flex-wrap: wrap;
+                gap: 50px;
+                .navContainer{
+                    flex: 0 0 100%;
+                    nav{
+                        ul{
+                            flex-direction: row;
+                        }
+                    }
+                }
+                .socialMediaContainer{
+                    flex: 1;
+                }
+                .imgContainer{
+                    flex: 0 0 60px;
+                }
+                .socialMediaContainer{
+                    align-items: center;
+                    justify-content: flex-end;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: map.get($breakPoints, 'large')){
+    footer{
+        .container{
+            .topFooterContainer{
+                flex-direction: row;
+                .imgContainer, .socialMediaContainer{
+                    flex: 0 0 20%;
+                }
+                .imgContainer{
+                    order: 1;
+                }
+                .navContainer{
+                    order: 2;
+                    flex: 1;
+                    nav{
+                        ul{
+                            gap: 10px;
+                        }
+                    }
+                }
+                .socialMediaContainer{
+                    order: 3;
+                }
+            }
+        }
+    }
+}

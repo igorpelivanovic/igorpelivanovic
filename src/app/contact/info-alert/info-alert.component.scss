@@ -1,0 +1,55 @@
+.infoMessageContainer{
+    position: fixed;
+    z-index: 100;
+    top: 0px;
+    padding-top: 100px;
+    right: 0;
+    max-height: 100vh;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 10px;
+    .infoMessage{
+        width: 300px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 14px;
+        padding-bottom: 15px;
+        border-radius: 5px 0 0 5px;
+        position: relative;
+        overflow: hidden;
+        .iconContainer{
+            span.icon{
+                font-size: 1.4rem;
+                fa-icon{
+                    display: flex;
+                }
+            }
+        }
+        .messageContainer{
+            p{
+                font-size: .95rem;
+                font-weight: 500;
+                &::first-letter{
+                    text-transform: capitalize;
+                }
+            }
+        }
+        .timeLine{
+            position: absolute;
+            bottom: 0px;
+            left: 0;
+            height: 3px;
+            width: 0%;
+            animation-timing-function: linear;
+            animation-fill-mode: forwards;
+            animation-name: fullWidth;
+        }
+    }
+}
+
+@keyframes fullWidth{
+    to{
+        width: 100%;
+    }
+}

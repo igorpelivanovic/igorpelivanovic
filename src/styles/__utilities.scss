@@ -1,0 +1,88 @@
+@use 'sass:map';
+@import './__variables.scss';
+
+
+@each $key, $val in $themeColors{
+    .text-color-#{$key}{
+        color: $val
+    }
+    .bg-color-#{$key}{
+        background-color: $val
+    }
+    .before-bg-color-#{$key}::before{
+        background-color: $val
+    }
+    .before-text-color-#{$key}::before{
+        color: $val
+    }
+    .after-text-color-#{$key}::after{
+        color: $val
+    }
+    .after-bg-color-#{$key}::after{
+        background-color: $val
+    }
+    .before-bg-color-#{$key}::before{
+        background-color: $val
+    }
+    .before-text-color-#{$key}::before{
+        color: $val
+    }
+    .after-text-color-#{$key}::after{
+        color: $val
+    }
+    .after-bg-color-#{$key}::after{
+        background-color: $val
+    }
+    .hover-text-color-#{$key}:hover{
+        color: $val
+    }
+    .hover-bg-color-#{$key}:hover{
+        background-color: $val
+    }
+    .border-color-#{$key}{
+        border-color: $val
+    }
+    .hover-border-color-#{$key}:hover{
+        border-color: $val
+    }
+}
+
+.titleSection{
+    padding-block: 100px 20px;
+    font-size: 1.4rem;
+}
+
+.opacity{
+    opacity: 0;
+}
+
+.upTranslate, .downTranslate, .leftTranslate, .rightTranslate, .zoomOut{
+    position: relative;
+}
+
+.upTranslate{
+    transform: translateY(-50px);
+}
+
+.downTranslate{
+    transform: translateY(50px);
+}
+
+.leftTranslate{
+    transform: translateX(-50px);
+}
+
+.rightTranslate{
+    transform: translateX(50px);
+}
+ 
+.zoomOut{
+    transform: scale(.6);
+}
+.intoView{
+    opacity: 1;
+    transform: none;
+    transition-duration: .8s;
+    transition-property: opacity, transform;
+
+}

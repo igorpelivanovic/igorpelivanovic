@@ -1,0 +1,91 @@
+@use "sass:map";
+@import "./_variables";
+body{
+    background-color: map.get($themeColors, "background");
+    scrollbar-color: map.get($themeColors, accent) #ffffff00;
+
+    &::-webkit-scrollbar-track {
+        background: #ffffff00;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: map.get($themeColors, accent);
+        border-color: map.get($themeColors, background);
+    }
+
+    section{
+        &#contact{
+            .inputContainer{
+                label{
+                    border-color: map.get($themeColors, "accent");
+                    span.label{
+                        color: map.get($themeColors, "accent");
+                        &:has(+input:focus), 
+                        &:has(+textarea:focus), 
+                        &:has(+input:not(:placeholder-shown)), 
+                        &:has(+textarea:not(:placeholder-shown)){
+                            background-color: map.get($themeColors, "background");
+                        }
+                    }
+                    &:has(.errorMsgContainer){
+                        border-color: map.get($themeColors, "error");
+                        span.label{
+                            color: map.get($themeColors, "errorLight");
+                        }
+                    }
+                    &:has(input:focus), &:has(textarea:focus){
+                        border-color: map.get($themeColors, "primary");
+                        span.label{
+                            color: map.get($themeColors, "primary");
+                        }
+                    }
+                }
+            }
+        }
+        &#hero{
+            .imgContainer{
+                svg{
+                    .cls-1{
+                        fill:map.get($themeColors, accent);
+                        stroke:map.get($themeColors, accent);
+                    }
+                    .cls-2{
+                        fill:map.get($themeColors, primary);
+                        stroke:map.get($themeColors, primary);
+                    }
+                    &:hover{
+                        .cls-1, .cls-2{
+                            fill: transparent;
+                        }
+                    }
+                }
+            }
+        }
+        &#portfolio{
+            .container{
+                .stickyContainer{
+                    .stickyContent{
+                        &::before{
+                            background: linear-gradient(90deg, map.get($themeColors, background) 0%, map.get($themeColors, background) 5%, rgba(0, 0, 0, 0) 100%);
+                        }
+                        &::after{
+                            background: linear-gradient(-90deg, map.get($themeColors, background) 0%, map.get($themeColors, background) 5%, rgba(0, 0, 0, 0) 100%);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .loadScreenContainer{
+        svg{
+            .cls-1{
+                fill: #fff0;
+                stroke: map.get($themeColors, "accent");
+            }
+            .cls-2{
+                fill: #fff0;
+                stroke: map.get($themeColors, "primary");
+            }
+        }
+    }
+}

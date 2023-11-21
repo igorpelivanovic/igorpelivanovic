@@ -1,0 +1,162 @@
+@use 'sass:map';
+@import './../../../styles/_variables';
+
+.loadScreenContainer{
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .loadLogoContainer{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        svg{
+            width: 100%;
+            .cls-1, .cls-2{
+              stroke-miterlimit: 10;
+              stroke-width: 6px;
+            }
+            .svg-elem-1 {
+              -webkit-animation: animate-svg-stroke-1 3s linear infinite both;
+                      animation: animate-svg-stroke-1 3s linear infinite both;
+            }
+            .svg-elem-2 {
+              -webkit-animation: animate-svg-stroke-2 3s linear infinite both;
+                      animation: animate-svg-stroke-2 3s linear infinite both;
+            }
+            .svg-elem-3 {
+              -webkit-animation: animate-svg-stroke-3 3s linear infinite both;
+                      animation: animate-svg-stroke-3 3s linear infinite both;
+            }
+        }
+    }
+}
+
+ @-webkit-keyframes animate-svg-stroke-1 {
+    0%, 2%{
+      stroke-dashoffset: 1142.572998046875px;
+      stroke-dasharray: 1142.572998046875px;
+    }
+
+    45%, 55% {
+      stroke-dashoffset: 2285.14599609375px;
+      stroke-dasharray: 1142.572998046875px;
+    }
+    98%, 100% {
+      stroke-dashoffset: 3427.71899414063px;
+      stroke-dasharray: 1142.572998046875px;
+    }
+  }
+  
+  @keyframes animate-svg-stroke-1 {
+    0%, 2%{
+      stroke-dashoffset: 1142.572998046875px;
+      stroke-dasharray: 1142.572998046875px;
+    }
+  
+    45%, 55% {
+      stroke-dashoffset: 2285.14599609375px;
+      stroke-dasharray: 1142.572998046875px;
+    }
+    98%, 100% {
+      stroke-dashoffset: 3427.71899414063px;
+      stroke-dasharray: 1142.572998046875px;
+    }
+  }
+
+  @-webkit-keyframes animate-svg-stroke-2 {
+    0%, 2% {
+      stroke-dashoffset: 710.5731201171875px;
+      stroke-dasharray: 710.5731201171875px;
+    }
+  
+    45%, 55% {
+      stroke-dashoffset: 1421.146240234375px;
+      stroke-dasharray: 710.5731201171875px;
+    }
+    98%, 100% {
+      stroke-dashoffset: 2131.71936035156px;
+      stroke-dasharray: 710.5731201171875px;
+    }
+  }
+  
+  @keyframes animate-svg-stroke-2 {
+    0%, 2% {
+      stroke-dashoffset: 710.5731201171875px;
+      stroke-dasharray: 710.5731201171875px;
+    }
+  
+    45%, 55% {
+      stroke-dashoffset: 1421.146240234375px;
+      stroke-dasharray: 710.5731201171875px;
+    }
+    98%, 100% {
+      stroke-dashoffset: 2131.71936035156px;
+      stroke-dasharray: 710.5731201171875px;
+    }
+  }
+
+
+  
+  @-webkit-keyframes animate-svg-stroke-3 {
+    0%, 2%{
+      stroke-dashoffset: 4016.712646484375px;
+      stroke-dasharray: 4016.712646484375px;
+    }
+  
+    45%, 55% {
+      stroke-dashoffset: 8033.42529296875px;
+      stroke-dasharray: 4016.712646484375px;
+    }
+    98%, 100% {
+      stroke-dashoffset: 12050.1379394531px;
+      stroke-dasharray: 4016.712646484375px;
+    }
+  }
+  
+  @keyframes animate-svg-stroke-3 {
+    0%, 2%{
+      stroke-dashoffset: 4016.712646484375px;
+      stroke-dasharray: 4016.712646484375px;
+    }
+  
+    45%, 55% {
+      stroke-dashoffset: 8033.42529296875px;
+      stroke-dasharray: 4016.712646484375px;
+    }
+    98%, 100% {
+      stroke-dashoffset: 12050.1379394531px;
+      stroke-dasharray: 4016.712646484375px;
+    }
+  }
+
+  
+@media (min-width: map.get($breakPoints, 'small')){
+  .loadScreenContainer{
+    .loadLogoContainer{
+      width: 40px;
+    }
+  }
+}
+
+@media (min-width: map.get($breakPoints, 'medium')){
+  .loadScreenContainer{
+    .loadLogoContainer{
+      width: 60px;
+    }
+  }
+}
+
+@media (min-width: map.get($breakPoints, 'large')){
+  .loadScreenContainer{
+    .loadLogoContainer{
+      width: 8%;
+    }
+  }
+}
