@@ -5,9 +5,12 @@ My name is Igor Pelivanović. I'm junior front-end developer. I'm passionate abo
 
 I'm open to job opportunities where i can contribute, learn and grow. If you have a good opportunity that matches my skills and experience then don't hesitate to contact me.
 
-<a href="https://salesp07.github.io" target="_blank">
-    <img src="https://img.shields.io/badge/Website-DC143C?style=for-the-badge&logo=medium&logoColor=white" target="_blank" />
-</a>
+<div align="center">
+    <a href="https://salesp07.github.io" target="_blank">
+        <img src="https://img.shields.io/badge/Website-DC143C?style=for-the-badge&logo=medium&logoColor=white" target="_blank" />
+    </a>
+</div>
+
 
 ## :iphone: Contact Me
 <div align="center">
