@@ -24,4 +24,4 @@ I'm open to job opportunities where i can contribute, learn and grow. If you hav
 
 ## Public repositories
 
-[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=igorpelivanovic&repo=infobooks&theme=dark)](https://github.com/igorpelivanovic/infobooks)
+[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=igorpelivanovic&repo=infobooks&theme=github_dark )](https://github.com/igorpelivanovic/infobooks)
