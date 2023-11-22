@@ -22,7 +22,7 @@ I'm open to job opportunities where i can contribute, learn and grow. If you hav
     </a>
 </div>
 
-## Public repositories
+## :pushpin: Pinned Repositories
 
 [![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=igorpelivanovic&repo=infobooks&theme=github_dark )](https://github.com/igorpelivanovic/infobooks)
 [![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=igorpelivanovic&repo=fastbuy&theme=github_dark )](https://github.com/igorpelivanovic/fastbuy)
