@@ -4,7 +4,9 @@
             <h1 class="leftTranslate opacity" appIntoSectionObserver [addClass]="'intoView'">
                 <span class="text-color-text">Hi, my name is</span>
                 <span class="name text-color-accent">igor pelivanović</span>
-                <span class="typewriter border-color-primary text-color-text" Typewritter [text]="typeWriteingContent" [letterDelay]="150">&nbsp;</span>
+                <div class="typeWritterContainer">
+                    <span class="typewriter text-color-text" Typewritter [text]="typeWriteingContent" [letterDelay]="150">&nbsp;</span>
+                </div>
             </h1>
             <div class="buttonsContainer">
                 <button class="downTranslate opacity primary-btn bg-color-primary text-color-text hover-bg-color-accent" (click)="goToSection('contact')" appIntoSectionObserver [addClass]="'intoView'" >

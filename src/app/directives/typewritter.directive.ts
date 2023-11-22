@@ -1,4 +1,5 @@
-import { Directive, ElementRef, Input, OnInit } from '@angular/core';
+import { Directive, ElementRef, Input, OnInit, Renderer2 } from '@angular/core';
+import { OnLoadService } from '../services/on-load.service';
 
 @Directive({
   selector: '[Typewritter]'
@@ -12,13 +13,23 @@ export class TypewritterDirective implements OnInit {
   private _el!: HTMLElement
   private _index: number = 0
 
-  constructor(private el: ElementRef) { 
+  constructor(private el: ElementRef, private renderer: Renderer2, private onLoadService: OnLoadService) { 
     this._el = el.nativeElement
   }
 
   ngOnInit(): void {
+    this.onLoadService.onLoad.subscribe((data)=>{
+      this.createTypedCursor()
       this.writeLetter()
+    })
   } 
+
+  private createTypedCursor(){
+    let cursor = this.renderer.createElement('span')
+    this.renderer.addClass(cursor, 'typedCursor')
+    this.renderer.addClass(cursor, 'border-color-primary') 
+    this.renderer.appendChild(this._el.parentElement, cursor)
+  }
 
   private timeOut(time: number){
     return new Promise((resolve)=>setTimeout(resolve, time)) 
