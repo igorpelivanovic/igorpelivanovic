@@ -8,7 +8,7 @@ export class TypewritterDirective implements OnInit {
 
   @Input({required: true}) text : String[] = []
   @Input() letterDelay: number = 500
-  @Input() textDelay: number = 1000
+  @Input() textDelay: number = 1100
 
   private _el!: HTMLElement
   private _index: number = 0
@@ -19,30 +19,34 @@ export class TypewritterDirective implements OnInit {
 
   ngOnInit(): void {
     this.onLoadService.onLoad.subscribe((data)=>{
-      this.createTypedCursor()
       this.writeLetter()
     })
   } 
 
-  private createTypedCursor(){
+  private createTypedCursor(): void{
     let cursor = this.renderer.createElement('span')
     this.renderer.addClass(cursor, 'typedCursor')
     this.renderer.addClass(cursor, 'border-color-primary') 
-    this.renderer.appendChild(this._el.parentElement, cursor)
+    this.renderer.appendChild(this._el, cursor)
   }
 
-  private timeOut(time: number){
+  private addContent(content: string): void{
+    this.renderer.setProperty(this._el, 'textContent', content)
+    this.createTypedCursor()
+  }
+
+  private timeOut(time: number): Promise<any>{
     return new Promise((resolve)=>setTimeout(resolve, time)) 
   }
 
   private async  writeLetter () : Promise<void>{
       for(let i = 0; i < this.text[this._index].length; i++){
-        this._el.innerText = this.text[this._index].substring(0, i+1)
+        this.addContent(this.text[this._index].substring(0, i+1))
         await this.timeOut(this.letterDelay)
       }
       await this.timeOut(this.textDelay)
       for(let i = this.text[this._index].length; i > 0; i--){
-        this._el.innerText = this.text[this._index].substring(0, i-1)
+        this.addContent(this.text[this._index].substring(0, i+1))
         await this.timeOut(this.letterDelay)
       }
       this._index++

@@ -9,7 +9,7 @@ export class OnLoadService {
   private _onLoad: Observable<Event>;
 
   constructor(@Inject(DOCUMENT) private document: Document) { 
-    this._onLoad = fromEvent(document.defaultView as Window, 'load').pipe(delay(5000))
+    this._onLoad = fromEvent(document.defaultView as Window, 'load').pipe(delay(3000))
   }
 
   get onLoad():Observable<Event>{
