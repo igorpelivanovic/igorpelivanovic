@@ -21,10 +21,3 @@ I'm open to job opportunities where i can contribute, learn and grow. If you hav
         <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/>
     </a>
 </div>
-
-## :pushpin: Pinned Repositories
-
-[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=igorpelivanovic&repo=infobooks&theme=github_dark )](https://github.com/igorpelivanovic/infobooks)
-[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=igorpelivanovic&repo=fastbuy&theme=github_dark )](https://github.com/igorpelivanovic/fastbuy)
-[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=igorpelivanovic&repo=gp&theme=github_dark )](https://github.com/igorpelivanovic/gp)
-[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=igorpelivanovic&repo=coffieshop&theme=github_dark )](https://github.com/igorpelivanovic/coffieshop)
