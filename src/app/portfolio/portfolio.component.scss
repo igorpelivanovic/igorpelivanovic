@@ -3,7 +3,7 @@
 
 section#portfolio{
         min-height: 100vh;
-
+        height: 100vh;
     .container{
         position: relative;
         display: flex;
@@ -17,6 +17,7 @@ section#portfolio{
             padding-block: 0 40px;
             display: flex;
             flex-direction: column;
+            overflow: hidden;
             gap: 60px;
             .titleSection{
                 text-align: center;
