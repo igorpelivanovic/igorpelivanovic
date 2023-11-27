@@ -1,10 +1,10 @@
 import { DOCUMENT } from '@angular/common';
-import { AfterContentInit, AfterViewInit, ContentChild, Directive, ElementRef, HostListener, Inject, Renderer2, ViewChild, numberAttribute } from '@angular/core';
+import { AfterViewInit, ContentChild, Directive, ElementRef, HostListener, Inject, Renderer2, ViewChild, numberAttribute } from '@angular/core';
 
 @Directive({
   selector: '[horizontalScroll]'
 })
-export class HorizontalScrollDirective implements AfterContentInit {
+export class HorizontalScrollDirective implements AfterViewInit {
 
   private _el : HTMLElement
 
@@ -23,13 +23,13 @@ export class HorizontalScrollDirective implements AfterContentInit {
   constructor(private element : ElementRef, @Inject(DOCUMENT) private document: Document, private render: Renderer2) { 
     this._el = element.nativeElement
   }
-  ngAfterContentInit(): void {
+  ngAfterViewInit(): void {
     this.initSectionHeight()
     this.scrollAction()
   }
   private initSectionHeight():void{
     let minHeightSection : number = Number(getComputedStyle(this._el).getPropertyValue('min-height').split('p')[0])
-    console.log(this.elementsContainer?.nativeElement.children.length - 1, this.elementsContainer?.nativeElement.offsetWidth)
+    console.log(minHeightSection)
     let extensionHeightSection : number = (this.elementsContainer?.nativeElement.children.length - 1) * this.elementsContainer?.nativeElement.offsetWidth
     this.render.setStyle(this._el, 'height', `${minHeightSection + extensionHeightSection}px`)
   }

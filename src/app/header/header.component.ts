@@ -1,5 +1,5 @@
 import { DOCUMENT } from '@angular/common';
-import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, HostListener, Inject, OnInit, QueryList, Renderer2, ViewChild, ViewChildren } from '@angular/core';
+import { AfterContentInit, AfterViewInit, ChangeDetectorRef, Component, ElementRef, HostListener, Inject, OnInit, QueryList, Renderer2, ViewChild, ViewChildren } from '@angular/core';
 import { ActiveSectionService } from '../services/active-section.service';
 import { animateLoadingScreen } from '../animations/AnimateLoadingScreen';
 import { SectionService } from '../services/section.service';
@@ -11,7 +11,7 @@ import { OnLoadService } from '../services/on-load.service';
   styleUrls: ['./header.component.scss'],
   animations: [animateLoadingScreen]
 })
-export class HeaderComponent implements OnInit, AfterViewInit {
+export class HeaderComponent implements OnInit, AfterViewInit{
 
   protected currentSection !: string
   protected scrolled: boolean = false
@@ -76,6 +76,7 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   private moveIndicator(btnRef: ElementRef | undefined) :void{
     if(btnRef){
       let btn = btnRef.nativeElement as HTMLElement
+      console.log(btn.offsetLeft)
       this.renderer.setStyle(this.navIndicator.nativeElement, 'width', `${btn.offsetWidth}px`)
       this.renderer.setStyle(this.navIndicator.nativeElement, 'left', `${btn.offsetLeft}px`)
     }
