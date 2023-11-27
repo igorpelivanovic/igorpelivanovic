@@ -1,5 +1,5 @@
 import { DOCUMENT } from '@angular/common';
-import { AfterContentInit, AfterViewChecked, AfterViewInit, ChangeDetectorRef, Component, ElementRef, HostListener, Inject, OnInit, QueryList, Renderer2, ViewChild, ViewChildren } from '@angular/core';
+import { AfterContentChecked, AfterViewInit, ChangeDetectorRef, Component, ElementRef, HostListener, Inject, OnInit, QueryList, Renderer2, ViewChild, ViewChildren } from '@angular/core';
 import { ActiveSectionService } from '../services/active-section.service';
 import { animateLoadingScreen } from '../animations/AnimateLoadingScreen';
 import { SectionService } from '../services/section.service';
@@ -11,7 +11,7 @@ import { OnLoadService } from '../services/on-load.service';
   styleUrls: ['./header.component.scss'],
   animations: [animateLoadingScreen]
 })
-export class HeaderComponent implements OnInit, AfterViewInit, AfterViewChecked{
+export class HeaderComponent implements OnInit, AfterViewInit, AfterContentChecked{
 
   protected currentSection !: string
   protected scrolled: boolean = false
@@ -36,8 +36,9 @@ export class HeaderComponent implements OnInit, AfterViewInit, AfterViewChecked{
               private renderer: Renderer2, 
               private sectionService: SectionService,
               private onLoadDoc: OnLoadService){}
-  ngAfterViewChecked(): void {
+  ngAfterContentChecked(): void {
     this.initActiveSection()
+
   }
 
   ngOnInit(): void {
