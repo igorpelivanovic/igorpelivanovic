@@ -30,6 +30,7 @@ export class HorizontalScrollDirective implements AfterViewInit {
   }
   private initSectionHeight():void{
     let minHeightSection : number = Number(getComputedStyle(this._el).getPropertyValue('min-height').split('p')[0])
+    console.log(this.borderContainer?.nativeElement.offsetWidth)
     let extensionHeightSection : number = (this.elementsContainer?.nativeElement.children.length - 1) * this.borderContainer?.nativeElement.offsetWidth
     this.render.setStyle(this._el, 'height', `${minHeightSection + extensionHeightSection}px`)
   }
