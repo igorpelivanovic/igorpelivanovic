@@ -1,10 +1,10 @@
 import { DOCUMENT } from '@angular/common';
-import { AfterContentChecked, AfterViewInit, ContentChild, Directive, ElementRef, HostListener, Inject, Renderer2, ViewChild, numberAttribute } from '@angular/core';
+import { AfterViewChecked, AfterViewInit, ContentChild, Directive, ElementRef, HostListener, Inject, Renderer2, ViewChild, numberAttribute } from '@angular/core';
 
 @Directive({
   selector: '[horizontalScroll]'
 })
-export class HorizontalScrollDirective implements AfterViewInit, AfterContentChecked {
+export class HorizontalScrollDirective implements AfterViewInit, AfterViewChecked {
 
   private _el : HTMLElement
 
@@ -24,7 +24,7 @@ export class HorizontalScrollDirective implements AfterViewInit, AfterContentChe
   constructor(private element : ElementRef, @Inject(DOCUMENT) private document: Document, private render: Renderer2) { 
     this._el = element.nativeElement
   }
-  ngAfterContentChecked(): void {
+  ngAfterViewChecked(): void {
     this.initSectionHeight()
     this.scrollAction()  
     console.log("on change")
