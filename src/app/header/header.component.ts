@@ -76,7 +76,7 @@ export class HeaderComponent implements OnInit, AfterViewInit{
   private moveIndicator(btnRef: ElementRef | undefined) :void{
     if(btnRef){
       let btn = btnRef.nativeElement as HTMLElement
-      console.log(btn.offsetLeft)
+      console.log("btn"+btn.offsetLeft)
       this.renderer.setStyle(this.navIndicator.nativeElement, 'width', `${btn.offsetWidth}px`)
       this.renderer.setStyle(this.navIndicator.nativeElement, 'left', `${btn.offsetLeft}px`)
     }
