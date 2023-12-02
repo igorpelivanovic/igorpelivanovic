@@ -31,22 +31,22 @@
                     <form [formGroup]="form" (ngSubmit)="submitContactForm()">
                         <div class="inputContainer">
                             <label for="from_name">
-                                <span class="label text-color-text">name</span>
                                 <input type="text" id="from_name" name="from_name" class="text-color-text" spellcheck="false" placeholder="" formControlName="from_name">
+                                <span class="label text-color-text">name</span>
                                 <app-error-input-message [formSubmit]="isSubmitForm" [errors]="getFormControl('from_name').errors"></app-error-input-message>
                             </label>
                         </div>
                         <div class="inputContainer">
                             <label for="email_id">
-                                <span class="label text-color-text">e-mail</span>
                                 <input type="email" id="email_id" name="email_id" class="text-color-text" spellcheck="false" placeholder="" email="true" formControlName="email_id"> 
+                                <span class="label text-color-text">e-mail</span>
                                 <app-error-input-message [formSubmit]="isSubmitForm" [errors]="getFormControl('email_id').errors"></app-error-input-message>
                             </label>
                         </div>
                         <div class="inputContainer">
                             <label for="message">
-                                <span class="label text-color-text">message</span>
                                 <textarea name="message" id="message" class="text-color-text" spellcheck="false" placeholder="" formControlName="message"></textarea>
+                                <span class="label text-color-text">message</span>
                                 <app-error-input-message [formSubmit]="isSubmitForm" [errors]="getFormControl('message').errors"></app-error-input-message>
                             </label>
                         </div>

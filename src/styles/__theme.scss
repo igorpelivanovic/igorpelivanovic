@@ -17,15 +17,12 @@ body{
         &#contact{
             .inputContainer{
                 label{
-                    border-color: map.get($themeColors, "accent");
                     span.label{
                         color: map.get($themeColors, "accent");
-                        &:has(+input:focus), 
-                        &:has(+textarea:focus), 
-                        &:has(+input:not(:placeholder-shown)), 
-                        &:has(+textarea:not(:placeholder-shown)){
-                            background-color: map.get($themeColors, "background");
-                        }
+                    }
+                    border-color: map.get($themeColors, "accent");
+                    input:focus+span.label, textarea:focus+span.label, input:not(:placeholder-shown)+span.label, textarea:not(:placeholder-shown)+span.label{
+                        background-color: map.get($themeColors, "background");
                     }
                     &:has(.errorMsgContainer){
                         border-color: map.get($themeColors, "error");

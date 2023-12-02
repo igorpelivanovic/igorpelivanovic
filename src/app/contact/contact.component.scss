@@ -106,10 +106,6 @@ section#contact{
                                     font-size: 1rem;
                                     transition: .3s;
                                     transition-property: transform, top, font-size, padding-inline;
-                                    &:has(+textarea){
-                                        top: 10px;
-                                        transform: translateY(0);
-                                    }
                                     &:has(+input:focus), &:has(+textarea:focus), &:has(+input:not(:placeholder-shown)), &:has(+textarea:not(:placeholder-shown)){
                                         padding-inline: 4px;
                                         top: 0;
@@ -120,6 +116,17 @@ section#contact{
                                         text-transform: capitalize;
                                     }
                                 }
+                                textarea+span.label{
+                                    top: 10px;
+                                    transform: translateY(0);
+                                }
+                                input:focus+span.label, textarea:focus+span.label, input:not(:placeholder-shown)+span.label, textarea:not(:placeholder-shown)+span.label{
+                                    padding-inline: 4px;
+                                    top: 0;
+                                    font-size: .9rem;
+                                    transform: translateY(-50%);
+                                }
+                                
                                 input{
                                     display: block;
                                     background-color: transparent;
