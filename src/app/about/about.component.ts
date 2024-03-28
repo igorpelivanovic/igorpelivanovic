@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { faCalendarDays, faGraduationCap } from '@fortawesome/free-solid-svg-icons';
 import { environment } from 'src/environments/environment';
-import { Education } from '../interfaces/education';
+import { Education } from '../core/interfaces/education';
 
 @Component({
   selector: 'app-about',

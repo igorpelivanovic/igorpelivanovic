@@ -1,18 +1,27 @@
 @use "sass:map";
 @import "./_variables";
-body{
-    background-color: map.get($themeColors, "background");
-    scrollbar-color: map.get($themeColors, accent) #ffffff00;
 
-    &::-webkit-scrollbar-track {
+
+@supports (not selector(::-webkit-scrollbar)) and (not selector(::-webkit-scrollbar-thumb)){
+    *{
+        scrollbar-color: map.get($themeColors, accent) #ffffff00;
+    }
+}
+@supports selector(::-webkit-scrollbar)and selector(::-webkit-scrollbar-thumb){
+    ::-webkit-scrollbar-track {
         background: #ffffff00;
     }
-
-    &::-webkit-scrollbar-thumb {
+    
+    ::-webkit-scrollbar-thumb {
         background-color: map.get($themeColors, accent);
         border-color: map.get($themeColors, background);
     }
+}
 
+
+
+body{
+    background-color: map.get($themeColors, "background");
     section{
         &#contact{
             .inputContainer{

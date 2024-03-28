@@ -1,9 +1,9 @@
 import { DOCUMENT } from '@angular/common';
 import { AfterViewChecked, AfterViewInit, ChangeDetectorRef, Component, ElementRef, HostListener, Inject, OnInit, QueryList, Renderer2, ViewChild, ViewChildren } from '@angular/core';
-import { ActiveSectionService } from '../services/active-section.service';
-import { animateLoadingScreen } from '../animations/AnimateLoadingScreen';
-import { SectionService } from '../services/section.service';
-import { OnLoadService } from '../services/on-load.service';
+import { ActiveSectionService } from '../core/services/active-section.service';
+import { animateLoadingScreen } from '../core/animations/AnimateLoadingScreen';
+import { SectionService } from '../core/services/section.service';
+import { OnLoadService } from '../core/services/on-load.service';
 
 @Component({
   selector: 'app-header',

@@ -9,7 +9,7 @@
                     <div class="siteContent" *ngFor="let project of projects">
                         <div class="siteContainer">
                             <div class="imgsContainer">
-                                <img [src]="'assets/imgs/'+project.image" [alt]="project.image+'_img'">
+                                <img [src]="'assets/imgs/'+project.fileName" [alt]="project.fileName+'_img'">
                             </div>
                             <div class="contentContainer">
                                 <h3 class="text-color-primary">{{project.title}}</h3>

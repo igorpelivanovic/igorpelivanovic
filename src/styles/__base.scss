@@ -3,31 +3,40 @@
 @import './_variables';
 
 
-*{
-    box-sizing: border-box;
-    font-family: 'Rubik', sans-serif;
-}
-html{
-    scrollbar-gutter: stable;
-}
-body{
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    scroll-behavior: smooth;
-    scrollbar-width: thin;
-    scrollbar-gutter: stable;
-    &:has(.loadScreenContainer){
-        overflow: hidden;
+@supports (not selector(::-webkit-scrollbar)) and (not selector(::-webkit-scrollbar-thumb)){
+    *{
+        scrollbar-width: thin;
     }
-    &::-webkit-scrollbar {
+}
+@supports selector(::-webkit-scrollbar)and selector(::-webkit-scrollbar-thumb){
+    ::-webkit-scrollbar {
         width: 16px;
     }
-    &::-webkit-scrollbar-thumb {
+    ::-webkit-scrollbar-thumb {
         border-radius: 10px;
         border-width: 4px;
         border-style: solid;
     }
+}
+
+*{
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+}
+
+html{
+    scrollbar-gutter: stable;
+}
+
+body{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    &:has(.loadScreenContainer), &:has(.navigationContainer.hamburgerActive){
+        overflow: hidden;
+    }
+   
 }
 ul{
     list-style: none;
@@ -85,9 +94,12 @@ input,textarea{
 }
 
 @media (min-width: map.get($breakPoints, 'large')){
+    body:has(.navigationContainer.hamburgerActive){
+        overflow: auto;
+    }
     .container{
         max-width: 950px;
-    scroll-snap-type: y proximity;
+        scroll-snap-type: y proximity;
     }
 }
 @media (min-width: map.get($breakPoints, 'extraLarge')){

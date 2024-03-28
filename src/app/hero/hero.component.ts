@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { SectionService } from '../services/section.service';
+import { SectionService } from '../core/services/section.service';
 
 @Component({
   selector: 'app-hero',

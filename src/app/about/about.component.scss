@@ -55,7 +55,9 @@ section#about{
                             .educationTimeline{
                                 .timeLinePartContainer{
                                     display: flex;
+                                    text-align: end;
                                     &:nth-child(even){
+                                        text-align: start;
                                         justify-content: flex-end;
                                         .timeLinePartContent{
                                             padding-inline: 30px 0;

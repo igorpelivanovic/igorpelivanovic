@@ -6,8 +6,8 @@ import { faPaperPlane, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { TrimValidator } from './form_validators/trimValidator';
 import emailjs from '@emailjs/browser';
 import { environment } from 'src/environments/environment';
-import { InfoMessageService } from '../services/info-message.service';
-import { TypeInfoMessage } from '../interfaces/infoMessage';
+import { InfoMessageService } from '../core/services/info-message.service';
+import { TypeInfoMessage } from '../core/interfaces/infoMessage';
 
 
 @Component({

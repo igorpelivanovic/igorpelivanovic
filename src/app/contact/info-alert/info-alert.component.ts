@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { faCircleCheck, faCircleExclamation } from '@fortawesome/free-solid-svg-icons';
-import { fadeInOutFromRight } from 'src/app/animations/fadeInOutFromRight';
-import { InfoMessage } from 'src/app/interfaces/infoMessage';
-import { InfoMessageService } from 'src/app/services/info-message.service';
+import { fadeInOutFromRight } from 'src/app/core/animations/fadeInOutFromRight';
+import { InfoMessage } from 'src/app/core/interfaces/infoMessage';
+import { InfoMessageService } from 'src/app/core/services/info-message.service';
 
 @Component({
   selector: 'app-messages',
@@ -36,7 +36,6 @@ export class InfoAlertComponent implements OnInit {
   }
   private initMessage(message: InfoMessage){
     this._messages.push(message)
-    console.log(message.type)
     setTimeout(()=>this.removeMessage(message.id), message.duration)
   }
   private removeMessage(id: number){

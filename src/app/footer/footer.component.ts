@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
-import { SectionService } from '../services/section.service';
+import { SectionService } from '../core/services/section.service';
 
 @Component({
   selector: 'app-footer',
