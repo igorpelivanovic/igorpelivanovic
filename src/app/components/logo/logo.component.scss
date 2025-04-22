@@ -1,0 +1,13 @@
+:host{
+    width: 100%;
+    display: block;
+}
+.logo{
+    display: block;
+    .cls-1,.cls-2{
+        stroke-miterlimit:10;
+        stroke-width:6px;
+        transition: .2s;
+        transition-property: fill, stroke;
+    }
+}

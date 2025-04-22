@@ -48,25 +48,6 @@ body{
                 }
             }
         }
-        &#hero{
-            .imgContainer{
-                svg{
-                    .cls-1{
-                        fill:map.get($themeColors, accent);
-                        stroke:map.get($themeColors, accent);
-                    }
-                    .cls-2{
-                        fill:map.get($themeColors, primary);
-                        stroke:map.get($themeColors, primary);
-                    }
-                    &:hover{
-                        .cls-1, .cls-2{
-                            fill: transparent;
-                        }
-                    }
-                }
-            }
-        }
         &#portfolio{
             .container{
                 .stickyContainer{
@@ -79,18 +60,6 @@ body{
                         }
                     }
                 }
-            }
-        }
-    }
-    .loadScreenContainer{
-        svg{
-            .cls-1{
-                fill: #fff0;
-                stroke: map.get($themeColors, "accent");
-            }
-            .cls-2{
-                fill: #fff0;
-                stroke: map.get($themeColors, "primary");
             }
         }
     }

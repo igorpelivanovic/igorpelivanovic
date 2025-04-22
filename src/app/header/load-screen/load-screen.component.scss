@@ -140,15 +140,15 @@
 @media (min-width: map.get($breakPoints, 'small')){
   .loadScreenContainer{
     .loadLogoContainer{
-      width: 40px;
-    }
+/*       width: 40px;
+ */    }
   }
 }
 
 @media (min-width: map.get($breakPoints, 'medium')){
   .loadScreenContainer{
     .loadLogoContainer{
-      width: 60px;
+      width: 200px;
     }
   }
 }
@@ -156,7 +156,7 @@
 @media (min-width: map.get($breakPoints, 'large')){
   .loadScreenContainer{
     .loadLogoContainer{
-      width: 8%;
+      width: 12%;
     }
   }
 }

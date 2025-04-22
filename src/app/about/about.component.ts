@@ -18,7 +18,8 @@ export class AboutComponent {
   private _educations : Education[] = [
     {title: "Multimedia electical technician", subTitle: "Mechanical and Electro tehnicals School - Paracin", time: {start: 2016, end: 2020}},
     {title: "PHP Web Developer", subTitle: "LINK group, ITAcademy - Belgrade", time: {start: 2020, end: 2021}},
-    {title: "JavaScript Frontend Developer", subTitle: "LINK group, ITAcademy - Belgrade", time: {start: 2021, end: 2022}}
+    {title: "JavaScript Frontend Developer", subTitle: "LINK group, ITAcademy - Belgrade", time: {start: 2021, end: 2022}},
+    {title: "Practial Web Programming Techniques", subTitle: "Enon Solutions - Belgrade", time: {start: 2024, end: 2025}}
   ]
 
   get icon(){

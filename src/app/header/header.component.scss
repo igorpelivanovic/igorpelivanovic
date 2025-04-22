@@ -11,6 +11,20 @@ header{
     z-index: 1000;
     transition-duration: .5s;
     transition-property: background-color;
+    &::before{
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 1px;
+        width: 0%;
+        background-color: map.get($themeColors, 'light');
+        border-radius:0 2px 2px 0;
+        box-shadow: 2px 2px 13px map.get($themeColors, 'primary');        
+        animation: ScrollLodaderIndicator linear;
+        animation-timeline: scroll();
+    }
+    animation-timeline: scroll();
     &:has( ~* > .loadScreenContainer){
         .container{
             .logoContainer{
@@ -23,6 +37,7 @@ header{
         align-items: center;
         justify-content: space-between;
         .logoContainer{
+            align-self: center;
             width: 40px;
             opacity: 1;
             img{
@@ -32,11 +47,14 @@ header{
             }
         }
         .navigationContainer{
+            position: relative;
+            z-index: 100;
             align-self: center;
             &.hamburgerActive{
                 .hamburgerMenuContainer{
+                    border-radius: 100%;
+                    box-shadow: 0 0 0 100vw #060718, 0 0 0 100vh #060718;
                     button{
-                        box-shadow: 0 0 0 100vw #060718, 0 0 0 100vh #060718;
                         .linesContainer{
                             overflow: hidden;
                             span.line{
@@ -66,6 +84,7 @@ header{
             }
         }
         nav{
+            z-index: 100;
             position: fixed;
             top: 0;
             left: 0;
@@ -108,7 +127,10 @@ header{
             }
         }
         .hamburgerMenuContainer{
+            transition: .5s;
             button{
+                position: relative;
+                z-index: 100;
                 border: none;
                 display: flex;
                 justify-content: center;
@@ -146,6 +168,13 @@ header{
         }
     }
 }
+
+@keyframes ScrollLodaderIndicator{
+    100%{
+        width: 100%;
+    }
+}
+
 
 @media (min-width: map.get($breakPoints, 'large')){
     header{

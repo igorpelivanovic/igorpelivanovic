@@ -47,8 +47,35 @@
     }
 }
 
+.logo{
+    .cls-1{
+        fill:map.get($themeColors, accent);
+        stroke:map.get($themeColors, accent);
+    }
+    .cls-2{
+        fill:map.get($themeColors, primary);
+        stroke:map.get($themeColors, primary);
+    }
+    &:hover{
+        .cls-1{
+            fill:transparent;
+        }
+        .cls-2{
+            fill:transparent;
+        }
+    }
+    &.transparent{
+        .cls-1{
+            fill: transparent;
+        }
+        .cls-2{
+            fill: transparent;
+        }
+    }
+}
+
 .titleSection{
-    padding-block: 100px 20px;
+    padding-block: 120px 20px;
     font-size: 1.4rem;
 }
 

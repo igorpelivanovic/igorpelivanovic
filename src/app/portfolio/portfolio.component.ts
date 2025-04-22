@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
+import { faArrowUpRightFromSquare, faCode } from '@fortawesome/free-solid-svg-icons';
 import { Project } from '../core/interfaces/projects';
 import { projectData } from '../core/data/portfolioProjectData';
 
@@ -13,7 +13,8 @@ export class PortfolioComponent{
   private _projectsArray: Project[] = projectData
 
   private _icons = {
-    faArrowUpRightFromSquare: faArrowUpRightFromSquare
+    faArrowUpRightFromSquare: faArrowUpRightFromSquare,
+    faCode: faCode
   }
 
   get icon(){

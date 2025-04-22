@@ -84,22 +84,35 @@ section#portfolio{
                                 line-height: 1.6;
                                 margin-bottom: auto;
                             }
-                            a{
-                                margin-block: auto 30px;
-                                display: inline-block;
-                                border: none;
-                                cursor: pointer;
-                                text-transform: uppercase;
-                                font-weight: 500;
-                                padding: 10px 40px;
-                                font-size: 1rem;
-                                border-radius: 30px;
-                                letter-spacing: 1px;
-                                transition: .4s;
-                                text-decoration: none;
-                                &:hover{
-                                    letter-spacing: 2px;
-                                    padding-inline: 50px;
+                            .links-container{
+                                display: flex;
+                                gap: 30px;
+                                a{
+                                    margin-block: auto 30px;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    border: none;
+                                    cursor: pointer;
+                                    font-weight: 500;
+                                    padding: 10px;
+                                    width: 50px;
+                                    aspect-ratio: 1/1;
+                                    font-size: 1.15rem;
+                                    border-radius: 30px;
+                                    letter-spacing: 1px;
+                                    transition: .4s;
+                                    text-decoration: none;
+                                    .link-title{
+                                        display: none;
+                                        &::first-letter{
+                                            text-transform: capitalize;
+                                        }
+                                    }
+                                    &:hover{
+                                        letter-spacing: 2px;
+                                        padding-inline: 50px;
+                                    }
                                 }
                             }
                         }
@@ -131,6 +144,18 @@ section#portfolio{
                                 }
                                 .contentContainer{
                                     flex: 0 0 45%;
+                                    .links-container{
+                                        a{
+                                            width: fit-content;
+                                            aspect-ratio: initial;
+                                            font-size: 1rem;
+                                            gap: 8px;
+                                            padding-inline: 20px;
+                                            .link-title{
+                                                display: block;
+                                            }
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -152,19 +177,30 @@ section#portfolio{
                         .siteContent{
                             padding-inline: 100px;
                             flex-direction: row;
-                            .imgsContainer{
-                                flex: 1;
-                                img{
-                                    width: 100%;
-                                }
-                            }
-                            .contentContainer{
-                                flex: 0 0 50%;
-                                align-self: stretch;
-                                button{
-                                    margin-top: 50px;
+                            .siteContainer{
+                                .imgsContainer{
+                                    flex: 1;
+                                    img{
+                                        width: 100%;
                                     }
                                 }
+                                .contentContainer{
+                                    flex: 0 0 50%;
+                                    align-self: stretch;
+                                    .links-container{
+                                        a{
+                                            padding-inline: 40px;
+                                            .link-title{
+                                                display: block;
+                                            }
+                                        }
+                                    }
+                                    button{
+                                        margin-top: 50px;
+                                        }
+                                    }
+                            }
+                            
                             }
                         }
                     }

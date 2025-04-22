@@ -19,6 +19,7 @@ import { ToFullWidthDirective } from './core/directives/to-full-width.directive'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoadScreenComponent } from './header/load-screen/load-screen.component';
 import { IntoSectionObserverDirective } from './core/directives/into-section-observer.directive';
+import { LogoComponent } from './components/logo/logo.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { IntoSectionObserverDirective } from './core/directives/into-section-obs
     SectionIntoViewDirective,
     ToFullWidthDirective,
     LoadScreenComponent,
-    IntoSectionObserverDirective
+    IntoSectionObserverDirective,
+    LogoComponent
   ],
   imports: [
     BrowserModule,

@@ -14,9 +14,20 @@
                             <div class="contentContainer">
                                 <h3 class="text-color-primary">{{project.title}}</h3>
                                 <p>{{project.body}}</p>
-                                <a [href]="project.url" target="_blank" class="bg-color-primary text-color-text hover-bg-color-accent">demo <span>
-                                    <fa-icon [icon]="icon.faArrowUpRightFromSquare"></fa-icon>
-                                </span></a>
+                                <div class="links-container">
+                                    <a [href]="project.previewUrl" target="_blank" class="bg-color-primary text-color-text hover-bg-color-accent">
+                                        <span class="link-title">demo</span>
+                                        <span>
+                                            <fa-icon class="icon" [icon]="icon.faArrowUpRightFromSquare"></fa-icon>
+                                        </span>
+                                    </a>
+                                    <a [href]="project.codeUrl" target="_blank" class="bg-color-primary text-color-text hover-bg-color-accent">
+                                        <span class="link-title">code</span>
+                                         <span>
+                                            <fa-icon class="icon" [icon]="icon.faCode"></fa-icon>
+                                        </span>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>

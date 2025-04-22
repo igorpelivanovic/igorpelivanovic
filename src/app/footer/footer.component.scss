@@ -144,6 +144,10 @@ footer{
                 }
                 .imgContainer{
                     order: 1;
+                    .logo-container{
+                        width: 100px;
+                        margin: auto;
+                    }
                 }
                 .navContainer{
                     order: 2;
